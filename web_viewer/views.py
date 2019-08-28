@@ -1,5 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import Bug
+from .forms import BugReportForm
 
 # Home page
 def index(request):
@@ -17,7 +18,20 @@ def show_bug_viewer(request):
     
 # Report bugs
 def create_bugs(request):
-    return render(request, "create_bug.html")
+    
+    if request.method == 'POST':
+        # Process the form
+        form = BugReportForm(request.POST, request.FILES)
+        print('something wrong')
+        if form.is_valid():
+            form.save()
+            return redirect(show_bug_viewer)
+    else:
+        form = BugReportForm()
+        print('something wrong')
+        return render(request, "create_bugs.html", {
+            'form' : form
+        })
     
     
     
