@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import auth, messages
-from .forms import UserLoginForm
+from .forms import UserLoginForm, UserRegistrationForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -47,7 +47,28 @@ def profile(request):
     
 # Register User
 def register(request):
-    return render(request, 'account_register.html')
     
-
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password1'])
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have successfully registered")
+            else:
+                messages.error(request, "Unable to register your account at this time")
+            
+            return redirect(reverse('Index'))
+            
+        else:
+            return render(request, "account_register.html", {
+                'form' : form
+            })
+    else:
+        form = UserRegistrationForm()
+        return render(request, 'account_register.html', {
+            'form' : form
+        })
     
