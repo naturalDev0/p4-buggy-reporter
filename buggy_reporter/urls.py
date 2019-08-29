@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from web_viewer.views import show_bug_viewer, index, create_bugs, edit_bugs
+from django.urls import include
+from web_viewer.views import index
 
 urlpatterns = [
-    path('', index),
     path('admin/', admin.site.urls),
-    path('bugs/', show_bug_viewer),
-    path('bugs/new/', create_bugs),
-    path('bugs/edit/<id>', edit_bugs)
+    path('', index, name="Index"),
+    path('accounts/', include('web_accounts.urls'))
 ]

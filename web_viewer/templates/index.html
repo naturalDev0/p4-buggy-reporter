@@ -9,5 +9,23 @@
 <body>
     <h1>Welcome to Buggy-Reporter</h1>
     <p>Your one and only bug report station that allow donations.</p>
+    
+    {% if request.user.username %}
+    Logged In As: {{request.user.username}}
+    {% endif %}
+    
+    <hr>
+    {% if messages %}
+    <div>
+        {% for message in messages %} {{ message }} {% endfor %}
+    </div>
+    {% endif %}
+    
+    <ul>
+        <li>Login</li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li>Profile</li>
+        <li>Register</li>
+    </ul>
 </body>
 </html>
