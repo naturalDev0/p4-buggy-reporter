@@ -127,3 +127,6 @@ AUTHENTICATION_BACKENDS = (
     # Needed to login by custom User model, regardless of `allauth`
     "django.contrib.auth.backends.ModelBackend",
 )
+
+# 'Flash Messages' function in Django
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"

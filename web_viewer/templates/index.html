@@ -1,31 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Welcome to Buggy-Reporter</h1>
-    <p>Your one and only bug report station that allow donations.</p>
-    
-    {% if request.user.username %}
-    Logged In As: {{request.user.username}}
-    {% endif %}
-    
-    <hr>
-    {% if messages %}
-    <div>
-        {% for message in messages %} {{ message }} {% endfor %}
-    </div>
-    {% endif %}
-    
-    <ul>
-        <li>Login</li>
-        <li><a href="{% url 'logout' %}">Logout</a></li>
-        <li>Profile</li>
-        <li>Register</li>
-    </ul>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block page_title %}Homepage | BuggyReporter{% endblock %}
+
+{% endblock %}
+
+{% block page_heading %}Home{% endblock %}
