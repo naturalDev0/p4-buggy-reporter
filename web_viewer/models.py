@@ -7,8 +7,8 @@ class Bug(models.Model):
     name = models.CharField(max_length=30, blank=False)
     done = models.BooleanField(blank=False, default=False)
     completed_at = models.DateField(blank=True, null=True, default=None)
-    # category= models.ForeignKey("Category", on_delete=models.CASCADE)
-    # tags = models.ManyToManyField("Tag")
+    category = models.ForeignKey("Category", on_delete=models.CASCADE)
+    tags = models.ManyToManyField("Tag")
     
     def __str__(self):
         return self.name

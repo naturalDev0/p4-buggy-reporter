@@ -10,7 +10,12 @@
     <h1>Bugs List</h1>
     <ul>
         {% for b in bugs %}
-        <li>{{b.name}}</li>
+        <li>
+            [{{b.category.name}}] {{b.name}} | <a href='edit/{{ b.id }}'>Edit</a>
+            {% for bug_tag in b.tags.all %}
+            <span>#{{ bug_tag.name }}</span>
+            {% endfor %}
+        </li>
         {% endfor %}
     </ul>
 </body>
