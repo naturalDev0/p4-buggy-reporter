@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import auth, messages
 from .forms import UserLoginForm, UserRegistrationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 
@@ -43,7 +44,12 @@ def logout(request):
 
 @login_required
 def profile(request):
-    return HttpResponse("Profile")
+    #return HttpResponse("Profile")
+    User = get_user_model()
+    user = User.objects.get(email=request.user.email)
+    return render(request, 'account_profile.html', {
+        'user' : user
+    })
     
 # Register User
 def register(request):

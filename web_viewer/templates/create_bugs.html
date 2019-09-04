@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{# Load static files #}
+{% load static %}
+
+{% block page_title %}Report Bug | BuggyReporter{% endblock %}
+
+{% block page_heading %}Report Bug{% endblock %}
+
+{% block content %}
     <form method='POST'>
         {% csrf_token %} 
         {{ form.as_p }}
         <input type="submit" value="Report Bug!"/>
     </form>
-</body>
-</html>
+{% endblock %}

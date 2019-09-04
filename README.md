@@ -30,12 +30,14 @@ In addition, you may also use this section to discuss plans for additional featu
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
-- HTML
-- CSS
-- JavaScript
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
-- 
+1. HTML5 --- *required*
+1. CSS3 --- *required*
+1. JavaScript --- *required*
+1. [JQuery](https://jquery.com)
+    * The project uses **JQuery** to simplify DOM manipulation.
+1. [Python 3.6.8](https://docs.python.org/3.6/)
+    * 
+1. [Django](https://www.djangoproject.com/)
 
 
 ## Testing
