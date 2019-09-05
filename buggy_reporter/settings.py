@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web_accounts',
-    'web_viewer'
+    'web_viewer',
+    'web_donate'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,6 @@ AUTHENTICATION_BACKENDS = (
 
 # 'Flash Messages' function in Django
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+STRIPE_PUBLISHABLE_KEY = os.environ["STRIPE_PUBLISHABLE_KEY"]
+STRIPE_SECRET_KEY = os.environ["STRIPE_SECRET_KEY"]

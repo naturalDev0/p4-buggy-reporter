@@ -1,18 +1,11 @@
-from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404, reverse
 from .models import Bug
 from .forms import BugReportForm
 
 # Home page
 def index(request):
-    return render(request, 'index.html')
-
-# Show reported bugs
-def show_bug_viewer(request):
-    
-    # THIS IS FOR TESTING DJANGO ONLY
-    # return HttpResponse("Hello World")
     results = Bug.objects.all()
-    return render(request, "show_bugs.html", {
+    return render(request, 'index.html', {
         'bugs' : results
     })
     
@@ -24,7 +17,7 @@ def create_bugs(request):
         form = BugReportForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect(show_bug_viewer)
+            return redirect(reverse('index'))
         pass
     else:
         form = BugReportForm()
@@ -39,7 +32,7 @@ def edit_bugs(request, id):
         form = BugReportForm(request.POST, instance=bug)
         if form.is_valid():
             form.save()
-            return redirect(show_bug_viewer)
+            return redirect(reverse('index'))
         pass
     
     else:

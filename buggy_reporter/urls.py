@@ -21,7 +21,7 @@ from web_viewer.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="Index"),
+    path('', index, name="index"),
     path('bugs/', include('web_viewer.urls')),
     path('accounts/', include('web_accounts.urls')),
     path('donate/', include('web_donate.urls'))

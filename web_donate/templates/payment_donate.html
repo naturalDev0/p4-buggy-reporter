@@ -6,11 +6,13 @@
 {% block page_heading %}Donate to us!{% endblock %}
 
 {% block content%}
-<form method='GET' action='{% url 'charge' %}' class='form'>
+
+<form method="GET" action="{% url 'charge' %}">
     <div class='form-group'>
-        <label class='label'>Amount to Donate:</label>
-        <input class='form-control' type='text' name='amount'/>
+        <label class='label'>Amount</label>
+        <input type='text' class='form-control' name='amount'/>
     </div>
-    <input type='submit' value='Donate' class='btn btn-primary'/>
+    <input type="submit" value="Donate!"/>
 </form>
+
 {% endblock %}

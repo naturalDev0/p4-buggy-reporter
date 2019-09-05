@@ -1,3 +1,28 @@
+/* IMPORTs */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+/* IDs*/
+#index-sect-first {
+    background: url("/static/addon/image/blurred-background-cellphone-coffee.jpg");
+    height: 50rem;
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+}
+
+#username-space {
+    width: 4rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+/* Classes */
 .footer {
     padding: 2rem 0;
+}
+
+/* General */
+* {
+    font-family: 'Raleway', sans-serif;
 }

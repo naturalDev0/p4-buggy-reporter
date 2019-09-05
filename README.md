@@ -78,8 +78,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from ...
+* [Pexels](https://www.pexels.com/)
+    1. [blurred-background-cellphone-coffee.jpg](https://www.pexels.com/photo/man-with-hand-on-temple-looking-at-laptop-842554/)
 
 ### Acknowledgements
-
-- I received inspiration for this project from X

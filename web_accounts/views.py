@@ -26,7 +26,7 @@ def login(request):
             if user:
                 # log in the user
                 auth.login(user=user, request=request)
-                return redirect(reverse('Index'))
+                return redirect(reverse('index'))
             else:
                 login_form.add_error('None', "Invalid username or password")
                 
@@ -40,10 +40,11 @@ def login(request):
 def logout(request):
     auth.logout(request)
     messages.success(request, "You have successfully been logged out")
-    return redirect(reverse('Index'))
+    return redirect(reverse('index'))
 
 @login_required
 def profile(request):
+    
     #return HttpResponse("Profile")
     User = get_user_model()
     user = User.objects.get(email=request.user.email)
@@ -66,7 +67,7 @@ def register(request):
             else:
                 messages.error(request, "Unable to register your account at this time")
             
-            return redirect(reverse('Index'))
+            return redirect(reverse('index'))
             
         else:
             return render(request, "account_register.html", {

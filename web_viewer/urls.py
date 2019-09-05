@@ -1,8 +1,7 @@
 from django.urls import path, include
-from .views import show_bug_viewer, create_bugs, edit_bugs
+from .views import create_bugs, edit_bugs
 
 urlpatterns = [
-    path('', show_bug_viewer),
-    path('new/', create_bugs),
-    path('edit/<id>', edit_bugs)
+    path('create/', create_bugs, name='create_bugs'),
+    path('edit/<id>', edit_bugs, name='edit_bugs')
 ]
