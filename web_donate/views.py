@@ -42,7 +42,12 @@ def charge(request):
 
     
 def success(request):
-    return HttpResponse("<h1>We have gotten your money</h1>")
+    messages.success(request, "You have successfully made a donation.")
+    return redirect(reverse('index'))
+    # return HttpResponse("<h1>We have gotten your money</h1>")
     
 def cancel(request):
-    return HttpResponse("<h1>No, don't go!</h1>")
+    messages.error(request, "You have cancelled a donation.")
+    return redirect(reverse('donate'))
+    
+    # return HttpResponse("<h1>No, don't go!</h1>")
