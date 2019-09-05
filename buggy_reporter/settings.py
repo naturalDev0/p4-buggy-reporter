@@ -24,10 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_qioa=$+up5@d1!!mann#p0@_$-hlsru1$9t=l3xd%&@fz8a&3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"), '127.0.0.1']
-ALLOWED_HOSTS = ['b7701a9c0db1423c9e545373e8971ba3.vfs.cloud9.us-east-1.amazonaws.com']
+# ALLOWED_HOSTS = ['b7701a9c0db1423c9e545373e8971ba3.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['buggyreporter-tl.herokuapp.com']
 
 # Application definition
 
