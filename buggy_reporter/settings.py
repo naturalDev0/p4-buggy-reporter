@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -145,3 +146,5 @@ STRIPE_PUBLISHABLE_KEY = os.environ["STRIPE_PUBLISHABLE_KEY"]
 STRIPE_SECRET_KEY = os.environ["STRIPE_SECRET_KEY"]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+DATABASES = {'default': dj_database_url.parse("postgres://mtmvnnsmfbwmxe:1efb5b69a9cb8de0e26d1ad5eec838ce0282982d1378caf07f83c52a95f1347d@ec2-54-227-251-33.compute-1.amazonaws.com:5432/d33v813n8pgb7v")}
