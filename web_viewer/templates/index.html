@@ -1,48 +1,57 @@
-{% extends 'base.html' %} {# Load static files #} {% load static %} {% block page_title %}Homepage | BuggyReporter{% endblock %} {% block content %}
-<div class="container">
-    {% if user.is_authenticated %}
+{% extends 'base.html' %}
+
+{# Load static files #}
+{% load static %}
+
+{% block page_title %}Homepage | BuggyReporter{% endblock %} {% block content %}
+
+{% if user.is_authenticated %}
+<div class="container-fluid default-section" id="index-sect-first">
+    <div class="container">
+
+    {% if messages %}
+    <div class="text-info mb-2">{% for m in messages %} {{ m }} {% endfor %}</div>
+    {% endif %}
+    
     <a class="btn btn-warning" href="{% url 'create_bugs' %}">Create Bug</a>
-    <div>
-        <!--<ul>-->
-        <!--{# for b in bugs #}-->
-        <!--<li>-->
-        <!--    [{{b.category.name}}] {{b.name}} | <a href='edit/{{ b.id }}'>Edit</a> {# for bug_tag in b.tags.all #}-->
-        <!--    <span>#{# bug_tag.name #}</span> {# endfor #}-->
-        <!--</li>-->
-        <!--{# endfor #}-->
-        <!--</ul>-->
+    <div class="overflow-auto mt-3" style="height: 50rem;">
         {% for b in bugs %}
-        <div class="card border-warning mt-3">
+        <div class="card border-warning mb-3">
             <div class="card-header text-white font-weight-bold bg-dark border-warning">{{ b.category.name }}</div>
             <div class="card-body bg-light">
                 <h5 class="card-title">{{ b.name }}</h5>
-                <p class="card-text">{ Description }</p>
-                <a href="'edit/{{ b.id }}'" class="btn btn-primary">Edit</a>
+                <p class="card-text">{{ b.description }}</p>
+                <a href="'edit/{{ b.id }}'" class="btn btn-sm btn-primary">Edit</a>
+                <a href="'delete/{{ b.id }}'" class="btn btn-sm btn-danger">Delete</a>
             </div>
             <div class="card-footer border-warning">
-                
                     Tags:
                     <span>
                         {% for bug_tag in b.tags.all %}
                             <button class="btn btn-sm btn-success font-italic">{{ bug_tag.name }}</button>
                         {% endfor %}
                     </span>
-                
             </div>
         </div>
         {% endfor %}
     </div>
-
-    {% else %}
-
-    <div class="jumbotron">
-        <h1 class="display-4">Welcome</h1>
-        <p class="lead">A platform for you to report any known bugs out there.</p>
-        <hr class="my-4">
-        <p>Have something to report?</p>
-        <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Sign up</a>
-    </div>
-
-    {% endif %}
 </div>
+</div>
+{% else %}
+    
+<div class="container-fluid default-section" id="main-sect">
+    <div class="container default-section">
+        {% if messages %}
+        <div class="text-info mb-2">{% for m in messages %} {{ m }} {% endfor %}</div>
+        {% endif %}
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome</h1>
+            <p class="lead">A platform for you to report any known bugs out there.</p>
+            <hr class="my-4">
+            <p>Have something to report?</p>
+            <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Sign up</a>
+        </div>
+    </div>
+</div>
+{% endif %}
 {% endblock %}

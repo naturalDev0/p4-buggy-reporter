@@ -3,7 +3,7 @@
 {# Load static files #}
 {% load static %}
 
-{% block page_heading %}Donate to us!{% endblock %}
+{% block page_heading %}Donate to us{% endblock %}
 
 {% block js %}
 <script src="https://js.stripe.com/v3/"></script>
@@ -24,5 +24,7 @@
 {% endblock %}
 
 {% block content%}
-<h2>Please wait....</h2>
+<div class="container-fluid default-section" id="index-sect">
+  <h2>Please wait....</h2>
+</div>
 {% endblock %}

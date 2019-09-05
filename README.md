@@ -2,26 +2,23 @@
 
 TGC project #4 - A bug tracker portal for users to report and creating a community where professionals can intervened the problems. The platform will allow users to login and make donations to the portal as well.
 
-## UX
+## UI/UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+[ Enter something here ... ]
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+[ Enter something here ... ]
  
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+* Feature 1 - allows users X to achieve Y, by having them fill out Z
+* Feature 2
+* Feature 2
+* Feature 2
+* Feature 2
+* Feature 2
+* Feature 2
 
 ### Features Left to Implement
 - Another feature idea
@@ -33,11 +30,10 @@ In this section, you should mention all of the languages, frameworks, libraries,
 1. HTML5 --- *required*
 1. CSS3 --- *required*
 1. JavaScript --- *required*
-1. [JQuery](https://jquery.com)
-    * The project uses **JQuery** to simplify DOM manipulation.
+1. [Bootstrap 4.3.1](https://getbootstrap.com/)
 1. [Python 3.6.8](https://docs.python.org/3.6/)
-    * 
 1. [Django](https://www.djangoproject.com/)
+1. [Heroku](https://www.heroku.com/)
 
 
 ## Testing
@@ -75,10 +71,11 @@ In addition, if it is not obvious, you should also describe how to run your code
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
 * [Pexels](https://www.pexels.com/)
     1. [blurred-background-cellphone-coffee.jpg](https://www.pexels.com/photo/man-with-hand-on-temple-looking-at-laptop-842554/)
+    2. [blackboard-chalkboard-communication.jpg](https://www.pexels.com/photo/blackboard-business-chalkboard-concept-355988/)
+* [Google Font - Raleway](https://fonts.google.com/?selection.family=Raleway)
 
 ### Acknowledgements

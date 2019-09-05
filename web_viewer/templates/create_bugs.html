@@ -8,9 +8,13 @@
 {% block page_heading %}Report Bug{% endblock %}
 
 {% block content %}
-    <form method='POST' class="text-white">
-        {% csrf_token %} 
-        {{ form.as_p }}
-        <input type="submit" value="Report Bug!"/>
-    </form>
+<div class="container-fluid default-section" id="index-sect-first">
+    <div class="container default-section">
+        <form method='POST'>
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <input type="submit" value="Report Bug"/>
+        </form>
+    </div>
+</div>
 {% endblock %}

@@ -7,10 +7,24 @@
 {{ user }}'s profile
 {% endblock %}
 
-{% block page_heading %}
-{{ user }}'s profile
-{% endblock %}
-
 {% block content %}
-<p>{{ profile.email }}</p>
+{% if not user.is_authenticated %}
+<div class="container-fluid default-section" id="main-sect">
+    <h1>404 Not Found</h1>
+</div>
+{% else %}
+<div class="container-fluid default-section" id="index-sect-first">
+    <div class="container">
+        <h1 class="text-white">{{ user }}'s profile</h1>
+        {% if messages %}
+        <div class="text-info">{% for message in messages %} {{ message }} {% endfor %}</div>
+        {% endif %}
+        <div class="container">
+            <p>{{ profile.email }}</p>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
 {% endblock %}

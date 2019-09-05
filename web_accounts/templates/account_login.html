@@ -3,19 +3,30 @@
 {# Load static files #}
 {% load static %}
 
+{# Load cripsy form #}
+{% load crispy_forms_tags %}
+
 {% block page_title %}Login | Buggy-Reporter{% endblock %}
 
-{% block page_heading %}User Login{% endblock %}
+{% block page_heading %}{% endblock %}
 
 {% block content %}
-<form method='POST'>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit">
-</form>
-
-{% if messages %}
-<div class="text-white">{% for message in messages %}{{ message }}{% endfor %}</div>
-{% endif %}
+<div class="container-fluid default-section" id="main-sect">
+    <div class="container default-section">
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+        {% for message in messages %}{{ message }}{% endfor %}
+        </div>
+        {% endif %}
+        <div class="text-white">
+            <h1>User Login</h1>
+            <form method='POST'>
+                {% csrf_token %}
+                {{ form.as_p}}
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

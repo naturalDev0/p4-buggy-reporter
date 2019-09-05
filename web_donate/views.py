@@ -1,4 +1,5 @@
-from django.shortcuts import render, reverse, HttpResponse
+from django.shortcuts import render, reverse, HttpResponse, redirect
+from django.contrib import messages
 from django.conf import settings
 
 # Create your views here.
@@ -8,17 +9,27 @@ def donate(request):
     return render(request, 'payment_donate.html')
     
 def charge(request):
-    amount = int( request.GET['amount']) * 100
+    get_amount = request.GET['amount']
+    if get_amount == '':
+        # messages.error(request, 'Please insert a value.')
+        return redirect(reverse('donate'))
+    else:
+        amount = int(get_amount) * 100
+        if amount == 0:
+            # messages.error(request, 'Please insert a value more than 0.')
+            # return redirect(reverse('donate'), error_message='Please insert a value more than 0.')
+            return redirect(reverse('donate'))
+        
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     session = stripe.checkout.Session.create(payment_method_types=['card'],
         line_items=[
             {
-                'name': 'Donation',
-                'description':'A simple donation',
-                'amount':amount ,
-                'currency':'usd',
-                'quantity':1
+                'name' : 'Donation',
+                'description' : 'A simple donation to support BuggyReporter',
+                'amount' : amount ,
+                'currency' : 'sgd',
+                'quantity' : 1
             }
         ],
         success_url= request.build_absolute_uri(reverse('success')),

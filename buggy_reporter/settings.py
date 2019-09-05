@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'web_accounts',
     'web_viewer',
-    'web_donate'
+    'web_donate',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,5 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 STRIPE_PUBLISHABLE_KEY = os.environ["STRIPE_PUBLISHABLE_KEY"]
 STRIPE_SECRET_KEY = os.environ["STRIPE_SECRET_KEY"]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
