@@ -16,7 +16,7 @@ def charge(request):
     else:
         amount = int(get_amount) * 100
         if amount == 0:
-            # messages.error(request, 'Please insert a value more than 0.')
+            messages.error(request, 'Please insert a value more than 0.')
             # return redirect(reverse('donate'), error_message='Please insert a value more than 0.')
             return redirect(reverse('donate'))
         

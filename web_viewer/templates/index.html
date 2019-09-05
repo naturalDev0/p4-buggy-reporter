@@ -10,7 +10,7 @@
     <div class="container">
 
     {% if messages %}
-    <div class="text-info mb-2">{% for m in messages %} {{ m }} {% endfor %}</div>
+    <div class="text-white mb-2">{% for m in messages %} {{ m }} {% endfor %}</div>
     {% endif %}
     
     <a class="btn btn-warning" href="{% url 'create_bugs' %}">Create Bug</a>
@@ -42,7 +42,7 @@
 <div class="container-fluid default-section" id="main-sect">
     <div class="container default-section">
         {% if messages %}
-        <div class="text-info mb-2">{% for m in messages %} {{ m }} {% endfor %}</div>
+        <div class="text-white mb-2">{% for m in messages %} {{ m }} {% endfor %}</div>
         {% endif %}
         <div class="jumbotron">
             <h1 class="display-4">Welcome</h1>

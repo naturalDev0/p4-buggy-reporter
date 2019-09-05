@@ -10,17 +10,22 @@
 <div class="container-fluid default-section" id="main-sect">
 {% endif %}
         <div class="container default-section" style="padding: 4rem 2.5rem; background-color: rgba(248,249,250, 0.7); border-radius: 2rem;">
-        <h1 class="font-weight-bold">Donate to us</h1>
-        <p>Like what you are using? Help us out by donate a small token of appreciation so that we can continue to serve you better.</p>
-        <form method="GET" action="{% url 'charge' %}">
-            <div class='form-group'>
-                <label class='label'>Amount (in SGD)</label>
-                <div class="block">
-                    <input type='text' class='form-control' name='amount' style="width: 23rem;" required/>
+            
+            <h1 class="font-weight-bold">Donate to us</h1>
+            <p>Like what you are using? Help us out by donate a small token of appreciation so that we can continue to serve you better.</p>
+            <form method="GET" action="{% url 'charge' %}">
+                <div class='form-group'>
+                    <label class='label'>Amount (in SGD)</label>
+                    <div class="block">
+                        <input type='text' class='form-control' name='amount' style="width: 23rem;" required/>
+                    </div>
                 </div>
-            </div>
-            <input type="submit" value="Donate"/>
-        </form>
-    </div>
+                {% if messages %}
+                <div class="text-danger mb-2">{% for m in messages %} {{ m }} {% endfor %}</div>
+                {% endif %}
+                <input type="submit" value="Donate"/>
+            </form>
+            
+        </div>
 </div>
 {% endblock %}
