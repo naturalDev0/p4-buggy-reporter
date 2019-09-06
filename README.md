@@ -1,4 +1,4 @@
-# [Buggy-Reporter]()
+# [Buggy-Reporter](http://buggyreporter-tl.herokuapp.com/)
 
 TGC project #4 - A bug tracker portal for users to report and creating a community where professionals can intervened the problems. The platform will allow users to login and make donations to the portal as well.
 
