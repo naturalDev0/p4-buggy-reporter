@@ -1,1 +1,1 @@
-web: gunicorn buggy-reporter.wsgi:application
+web: gunicorn buggy_reporter.wsgi:application
