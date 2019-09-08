@@ -10,7 +10,12 @@
     <div class="container">
 
     {% if messages %}
-    <div class="text-white mb-2">{% for m in messages %} {{ m }} {% endfor %}</div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="aMessBox">
+      {% for m in messages %} {{ m }} {% endfor %}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
     {% endif %}
     
     <a class="btn btn-warning" href="{% url 'create_bugs' %}">Create Bug</a>
@@ -21,8 +26,8 @@
             <div class="card-body bg-light">
                 <h5 class="card-title">{{ b.name }}</h5>
                 <p class="card-text">{{ b.description }}</p>
-                <a href="'edit/{{ b.id }}'" class="btn btn-sm btn-primary">Edit</a>
-                <a href="'delete/{{ b.id }}'" class="btn btn-sm btn-danger">Delete</a>
+                <a href="{% url 'edit_bugs' b.id %}" class="btn btn-sm btn-primary">Edit</a>
+                <a href="{% url 'delete_bugs' b.id %}" class="btn btn-sm btn-danger">Delete</a>
             </div>
             <div class="card-footer border-warning">
                     Tags:

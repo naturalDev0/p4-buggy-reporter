@@ -51,7 +51,7 @@ User Stores: --> *(e.g. As a user type, I want to perform an action, so that I a
 1. JavaScript --- *required*
     1. Accompanied with Bootstrap
 1. [Bootstrap 4.3.1](https://getbootstrap.com/)
-1. [SQL]()
+1. [SQL](https://en.wikipedia.org/wiki/SQL)
     1. Perform database querying when needed (especially checking if data has been inserted...)
 1. [Python 3.6.8](https://docs.python.org/3.6/)
 1. [Django](https://www.djangoproject.com/)

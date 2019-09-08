@@ -8,6 +8,28 @@
 {% block page_heading %}Report Bug{% endblock %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<div class="container-fluid default-section" id="index-sect-first">
+  <div class="container default-section">
     <form method="POST">
+        {% csrf_token %} 
+        <div class="card">
+          <h5 class="card-header">{{ bugs.name }}</h5>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">{{ bugs.description }}</p>
+            <button class="btn btn-danger" type="submit">Confirm</button>
+            <a href="{% url 'index' %}" class="btn btn-primary">Cancel</a>
+          </div>
+        </div>
     </form>
+  </div>
+</div>
+{% else %}
+<div class="container-fluid default-section" id="main-sect">
+  <div class="container default-section">
+    <h1 class="font-weight-bold">Page Not Found</h1>
+  </div>
+</div>
+{% endif %}
 {% endblock %}
