@@ -24,11 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_qioa=$+up5@d1!!mann#p0@_$-hlsru1$9t=l3xd%&@fz8a&3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"), '127.0.0.1']
-# ALLOWED_HOSTS = ['b7701a9c0db1423c9e545373e8971ba3.vfs.cloud9.us-east-1.amazonaws.com']
-ALLOWED_HOSTS = ['buggyreporter-tl.herokuapp.com']
+ALLOWED_HOSTS = ['b7701a9c0db1423c9e545373e8971ba3.vfs.cloud9.us-east-1.amazonaws.com']
+# ALLOWED_HOSTS = ['buggyreporter-tl.herokuapp.com']
 
 # Application definition
 
@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'buggy_reporter.urls'
@@ -128,9 +128,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 AUTH_USER_MODEL = 'web_accounts.MyUser'
@@ -148,4 +148,4 @@ STRIPE_SECRET_KEY = os.environ["STRIPE_SECRET_KEY"]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-DATABASES = {'default': dj_database_url.parse("postgres://mtmvnnsmfbwmxe:1efb5b69a9cb8de0e26d1ad5eec838ce0282982d1378caf07f83c52a95f1347d@ec2-54-227-251-33.compute-1.amazonaws.com:5432/d33v813n8pgb7v")}
+# DATABASES = {'default': dj_database_url.parse("postgres://mtmvnnsmfbwmxe:1efb5b69a9cb8de0e26d1ad5eec838ce0282982d1378caf07f83c52a95f1347d@ec2-54-227-251-33.compute-1.amazonaws.com:5432/d33v813n8pgb7v")}
